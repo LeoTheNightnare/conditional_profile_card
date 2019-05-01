@@ -9,19 +9,70 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
+  console.log(variables);
+  let nn = "Anacleta";
+  if (variables.name !== null) {
+    nn = variables.name;
+  }
+
+  let ln = "Sinforosa";
+  if (variables.lastname !== null) {
+    ln = variables.lastname;
+  }
+
+  let r = "Slacker";
+  if (variables.role !== null) {
+    r = variables.role;
+  }
+
+  let c = "Pueblo";
+  if (variables.city !== null) {
+    c = variables.city;
+  }
+
+  let ct = "Viejo";
+  if (variables.country !== null) {
+    ct = variables.country;
+  }
+
+  let t = "alesanchezr";
+  if (variables.twitter !== null) {
+    t = variables.twitter;
+  }
+
+  let g = "alesanchezr";
+  if (variables.github !== null) {
+    g = variables.github;
+  }
+
+  let l = "alesanchezr";
+  if (variables.linkedin !== null) {
+    l = variables.linkedin;
+  }
+
+  let i = "alesanchezr";
+  if (variables.instagram !== null) {
+    i = variables.instagram;
+  }
+
+  let smp = "right";
+  if (variables.socialMediaPosition !== "left") {
+    smp = variables.socialMediaPosition;
+    console.log(smp);
+  }
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${nn} ${ln}</h1>
+          <h2>${r}</h2>
+          <h3>${c}, ${ct}</h3>
+          <ul class="${smp}">
+            <li><a href="https://twitter.com/${t}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${g}"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${l}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${i}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
